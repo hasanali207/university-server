@@ -11,11 +11,20 @@ app.use(cors());
 // application routes
 app.use('/api/v1/students', StudentRoutes);
 
-const getAController = (req: Request, res: Response) => {
-  const a = 10;
-  res.send(a);
-};
 
-app.get('/', getAController);
+app.get('/', (req: Request, res: Response) => {
+  res.send('Book Store Server Rnning 😎');
+});
+
+
+app.use((req: Request, res: Response) => {
+  res.status(404).json({
+    success: false,
+    message: 'Route not found',
+    error: { message: 'Route not found' },
+    stack: null,
+  });
+});
+
 
 export default app;
