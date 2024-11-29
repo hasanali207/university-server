@@ -13,7 +13,7 @@ app.use('/api/v1/students', StudentRoutes);
 
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Book Store Server Rnning 😎');
+  res.send('PH University Server Rnning 😎');
 });
 
 
